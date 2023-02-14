@@ -1,5 +1,5 @@
-public class CarroG extends Veiculos{
-    public CarroG() {
+public class CarroPequeno extends Veiculos{
+    public CarroPequeno() {
         System.out.println("Digite uma cor: ");
         setCor(LerSring());
         System.out.println("Digite a Disponibilidade: ");

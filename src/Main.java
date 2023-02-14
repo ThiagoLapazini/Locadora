@@ -30,15 +30,15 @@ public class Main {
                         x = Lerint();
                         switch (x) {
                             case 1: //Veiculo Pequeno.
-                                CarroP mini = new CarroP();
+                                CarroPequeno mini = new CarroPequeno();
                                 Veiculos.RegistraVeiculos(mini);
                                 break;
                             case 2: //Veiculo Medio
-                                CarroM med = new CarroM();
+                                CarroMedio med = new CarroMedio();
                                 Veiculos.RegistraVeiculos(med);
                                 break;
                             case 3: //Veiculo Grande.
-                                CarroG grd = new CarroG();
+                                CarroSUV grd = new CarroSUV();
                                 Veiculos.RegistraVeiculos(grd);
                                 break;
                             case 4: //Menu
@@ -61,6 +61,15 @@ public class Main {
                     cpf = LerSring();
                     System.out.println("Digite um RG: ");
                     RG = LerSring();
+                    boolean clienteExistente = false;
+                    for (Cliente c : clientes) {
+                        if (c.getCPF().equals(cpf)) {
+                            clienteExistente = true;
+                            System.out.println("Cliente já existe!");
+                            break;
+                        }
+                    }
+                    // Se o cliente não existir, adiciona o novo cliente à lista de clientes
                     Cliente cliente = new Cliente(nome, cpf, RG);
                     clientes.add(cliente);
                     List<Veiculos> Disp = new ArrayList<>();
@@ -79,7 +88,6 @@ public class Main {
                         Disp.get(car).setDisponibilidade("N");
 
                     }
-
                     break;
                 case 4: //Devolver veículo.
                     System.out.println("Digite seu cpf: ");

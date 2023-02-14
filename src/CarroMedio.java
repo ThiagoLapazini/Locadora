@@ -1,7 +1,5 @@
-import java.util.Scanner;
-
-public class CarroP extends Veiculos{
-    public CarroP() {
+public class CarroMedio extends Veiculos{
+    public CarroMedio() {
         System.out.println("Digite uma cor: ");
         setCor(LerSring());
         System.out.println("Digite a Disponibilidade: ");
